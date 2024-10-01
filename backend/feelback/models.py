@@ -17,9 +17,16 @@ class Customer(models.Model):
         return 
 
 class Package(models.Model):
-    STATE = ['Excellent, Très bon état, Bon état, État correct, Endommagé , Inutilisable']
-    departure_state = models.CharField(choices=STATE)
-    arival_state = models.CharField(choices=STATE)
+    STATE = [
+        ('EXCELLENT', 'Excellent'),
+        ('TRES_BON_ETAT', 'Très bon état'),
+        ('BON_ETAT', 'Bon état'),
+        ('ETAT_CORRECT', 'État correct'),
+        ('ENDOMMAGE', 'Endommagé'),
+        ('INUTILISABLE', 'Inutilisable')
+    ]
+    departure_state = models.CharField(choices=STATE, max_length=50)
+    arival_state = models.CharField(choices=STATE, max_length=50)
     weight = models.FloatField()
     fragile = models.BooleanField()
 
@@ -30,9 +37,9 @@ class Package(models.Model):
         return 
 
 class Deliverer(models.Model):
-    name = models.CharField(max_length="50")
-    surname = models.CharField(max_length="50")
-    phone_number = models.CharField(max_length="50")
+    name = models.CharField(max_length=50)
+    surname = models.CharField(max_length=50)
+    phone_number = models.CharField(max_length=50)
 
     def __str__(self):
         return 
@@ -55,10 +62,17 @@ class Delivery(models.Model):
         return 
 
 class Feedback(models.Model):
-    STATE = ['Excellent, Très bon état, Bon état, État correct, Endommagé , Inutilisable']
+    STATE = [
+        ('EXCELLENT', 'Excellent'),
+        ('TRES_BON_ETAT', 'Très bon état'),
+        ('BON_ETAT', 'Bon état'),
+        ('ETAT_CORRECT', 'État correct'),
+        ('ENDOMMAGE', 'Endommagé'),
+        ('INUTILISABLE', 'Inutilisable')
+    ]
     delivery = models.ForeignKey(Delivery, on_delete=models.CASCADE)
     delays_rate = models.IntegerField()
-    state_rate =  models.CharField(choices=STATE)
+    state_rate =  models.CharField(choices=STATE, max_length=50)
     behaviour_rate = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
