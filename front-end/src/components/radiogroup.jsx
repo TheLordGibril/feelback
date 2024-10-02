@@ -6,7 +6,7 @@ export default function RadioGroup(props) {
     return(
         <div className="container-radiogroup">
             <p id="title-radiogroup">{props.text}</p>
-            <div>
+            <div id="container-radio">
                 <input type="radio" name="1" id="1" />
                 <label htmlFor="1">1</label>
                 <input type="radio" name="2" id="2" />
