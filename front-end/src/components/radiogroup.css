@@ -1,0 +1,9 @@
+.container-radiogroup {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#title-radigroup {
+    text-transform: capitalize;
+}
