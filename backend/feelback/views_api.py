@@ -5,7 +5,7 @@ from rest_framework import status
 from .models import Customer, Deliverer, Package, Delivery, Form, Question, FormQuestion
 from .serializers import (
     CustomerSerializer, DelivererSerializer, PackageSerializer,
-    DeliverySerializer, FormSerializer, QuestionSerializer, FormQuestionSerializer
+    DeliverySerializer, FormSerializer, QuestionSerializer, FormQuestionSerializer, FormQuestionCreateSerializer
 )
 from .utils import get_feedback_stats
 from rest_framework.response import Response
@@ -49,7 +49,8 @@ class FormQuestionList(generics.ListAPIView):
 class FormQuestionCreate(APIView):
     def post(self, request, *args, **kwargs):
         if isinstance(request.data, list):
-            serializer = FormQuestionSerializer(data=request.data, many=True)
+            serializer = FormQuestionCreateSerializer(
+                data=request.data, many=True)
 
             if serializer.is_valid():
                 serializer.save()
