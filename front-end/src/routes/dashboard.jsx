@@ -18,7 +18,6 @@ export default function Dashboard() {
         .catch(error => console.error(error));
     }, []);
 
-
     return(
         <div className="container-dashboard">
             <Header/>
