@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.db.models import Avg
 
 
 class Customer(models.Model):
@@ -13,11 +14,8 @@ class Customer(models.Model):
     town = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
 
-    def str(self):
-        return
-
-    def unicode(self):
-        return
+    def __str__(self):
+        return ""
 
 
 class Deliverer(models.Model):
@@ -26,11 +24,8 @@ class Deliverer(models.Model):
     phone_number = models.CharField(max_length=20)
     email = models.EmailField()
 
-    def str(self):
-        return
-
-    def unicode(self):
-        return
+    def __str__(self):
+        return ""
 
 
 class Package(models.Model):
@@ -46,11 +41,8 @@ class Package(models.Model):
     weight = models.FloatField()
     fragile = models.BooleanField(default=False)
 
-    def str(self):
-        return
-
-    def unicode(self):
-        return
+    def __str__(self):
+        return ""
 
 
 class Delivery(models.Model):
@@ -60,29 +52,21 @@ class Delivery(models.Model):
     scheduled_time = models.DateTimeField()
     arrival_time = models.DateTimeField()
 
-    def str(self):
-        return
-
-    def unicode(self):
-        return
+    def __str__(self):
+        return ""
 
 
 class Form(models.Model):
-    def str(self):
-        return
-
-    def unicode(self):
-        return
+    title = models.CharField(max_length=255)
+    def __str__(self):
+        return ""
 
 
 class Question(models.Model):
     title = models.CharField(max_length=255)
 
-    def str(self):
-        return
-
-    def unicode(self):
-        return
+    def __str__(self):
+        return ""
 
 
 class FormQuestion(models.Model):
@@ -97,8 +81,5 @@ class FormQuestion(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
 
-    def str(self):
-        return
-
-    def unicode(self):
-        return
+    def __str__(self):
+        return ""
