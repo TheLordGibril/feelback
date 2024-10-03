@@ -1,0 +1,33 @@
+.container-home { 
+    font-family: 'Rajdhani', sans-serif; 
+}
+
+.link-button {
+    padding: 10px;
+    border-radius: 0px;
+    text-transform: uppercase;
+}
+
+#dashboard-button {
+    color: #ffffff;
+    background-color: #666666;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#form-button {
+    color: #ffffff;
+    background-color: #0D35FF;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#home-title {
+    font-size: 22px;
+
+}
+
+#home-subtitle {
+    font-weight: 600;
+    font-size: 16px;
+}
