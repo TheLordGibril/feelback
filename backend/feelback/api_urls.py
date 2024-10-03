@@ -2,7 +2,7 @@
 from django.urls import path
 from .views_api import (
     CustomerList, DelivererList, PackageList, DeliveryList,
-    FormList, QuestionList, FormQuestionList, AnswerStatsList
+    FormList, QuestionList, FormQuestionList, AnswerStatsList, FormQuestionCreate
 )
 
 urlpatterns = [
@@ -14,5 +14,7 @@ urlpatterns = [
     path('questions/', QuestionList.as_view(), name='question-list'),
     path('form-questions/', FormQuestionList.as_view(), name='form-question-list'),
     path('answer-stats/', AnswerStatsList.as_view(), name='answer-stats-list'),
-    
+    path('create-answer/', FormQuestionCreate.as_view(), name='create-answer')
+
+
 ]

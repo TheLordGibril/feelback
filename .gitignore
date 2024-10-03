@@ -5,4 +5,3 @@ backend/feelback/migrations
 backend/db.sqlite3
 backend/feelback/__init__.py
 backend/db.sqlite3
-backend/feelback/management/commands/__pycache__/populate_db.cpython-310.pyc
