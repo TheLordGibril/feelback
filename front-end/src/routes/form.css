@@ -1,0 +1,26 @@
+.container-form { 
+    font-family: 'Rajdhani', sans-serif; 
+}
+
+
+.link-button {
+    padding: 10px;
+    border-radius: 0px;
+    text-transform: uppercase;
+}
+
+#home-button {
+    color: #ffffff;
+    background-color: #666666;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+#send-button {
+    font-family: 'Rajdhani', sans-serif;
+    color: #ffffff;
+    background-color: #0D35FF;
+    font-size: 14px;
+    font-weight: bold;
+}

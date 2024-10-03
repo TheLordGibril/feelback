@@ -1,0 +1,14 @@
+.container-radiogroup {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+#title-radiogroup::first-letter {
+    text-transform:uppercase;
+}
+
+#container-radio {
+}

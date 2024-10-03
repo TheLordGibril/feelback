@@ -1,0 +1,50 @@
+.container-dashboard { 
+    font-family: 'Rajdhani', sans-serif; 
+}
+
+.link-button {
+    padding: 10px;
+    border-radius: 0px;
+    text-transform: uppercase;
+}
+
+#dashboard-button {
+    color: #ffffff;
+    background-color: #666666;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#form-button {
+    color: #ffffff;
+    background-color: #0D35FF;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#container-stats {
+    display: flex;
+    justify-content: space-between;
+}
+#container-stats > * {
+    display: flex;
+    flex-direction: column;
+    background-color: #0D35FF;
+    color: #ffffff;
+    width: 165px;
+    height: 165px;
+    align-items: center;
+    
+}
+
+#container-stats > * > .stat {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#container-stats > * > .text {
+    font-weight: 100;
+    font-size: 14px;
+}
+
+
