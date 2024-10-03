@@ -5,10 +5,18 @@
     font-weight: 600;
 }
 
-
+#title-radiogroup {
+    margin-bottom: 0px;
+}
 #title-radiogroup::first-letter {
     text-transform:uppercase;
 }
 
 #container-radio {
+    display: flex;
+    align-items: center;
+}
+
+#container-radio > label {
+    margin-right: 15px;
 }

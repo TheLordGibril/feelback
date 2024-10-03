@@ -33,18 +33,21 @@
     color: #ffffff;
     width: 165px;
     height: 165px;
-    align-items: center;
+    justify-content: center;
+    text-align: center;
     
 }
 
 #container-stats > * > .stat {
     font-weight: 700;
     font-size: 20px;
+    margin-bottom: 0px;
 }
 
 #container-stats > * > .text {
     font-weight: 100;
     font-size: 14px;
+    margin-top: 0px;
 }
 
 

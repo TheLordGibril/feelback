@@ -14,13 +14,13 @@ export default function RadioGroup(props) {
                 <input type="radio" name={props.name} id="1" onChange={handleLocalChange}/>
                 <label htmlFor="1">1</label>
                 <input type="radio" name={props.name} id="2" onChange={handleLocalChange} />
-                <label htmlFor="1">2</label>
+                <label htmlFor="2">2</label>
                 <input type="radio" name={props.name} id="3" onChange={handleLocalChange} />
-                <label htmlFor="1">3</label>
+                <label htmlFor="3">3</label>
                 <input type="radio" name={props.name} id="4" onChange={handleLocalChange} />            
-                <label htmlFor="1">4</label>
+                <label htmlFor="4">4</label>
                 <input type="radio" name={props.name} id="5" onChange={handleLocalChange} />
-                <label htmlFor="1">5</label>
+                <label htmlFor="5">5</label>
             </div>
         </div>
     )

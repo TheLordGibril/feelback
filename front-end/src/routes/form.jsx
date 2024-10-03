@@ -34,21 +34,21 @@ export default function Form() {
                     form: 1,
                     question: 1,
                     answer: formState.delay,
-                    customer: 3,
+                    customer: 4,
                     deleted_at: null
                 },
                 {
                     form: 1,
                     question: 2,
                     answer: formState.state,
-                    customer: 3,
+                    customer: 4,
                     deleted_at: null
                 },
                 {
                     form: 1,
                     question: 3,
                     answer: formState.behavior,
-                    customer: 3,
+                    customer: 4,
                     deleted_at: null
                 }
             ]);
@@ -64,7 +64,7 @@ export default function Form() {
         <div className="container-form">
             <Header/>
             <Link to="/" id="home-button" className="link-button">revenir a la page daccueil</Link>
-            <h2>Donner votre avis</h2>
+            <h2 id="opinion">Donner votre avis</h2>
         
             <RadioGroup handleChange={test} text="évaluer de 1 a 5 le respect du délai de livraison" name="delay"/>
             <RadioGroup handleChange={test} text="évaluer de 1 a 5 l'état de votre colis a sa réception" name="state"/>

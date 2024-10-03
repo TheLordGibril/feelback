@@ -31,15 +31,15 @@ export default function Dashboard() {
                     <p className="text">Réponses</p>
                 </div>
                 <div className="delivery-delay">
-                    <p className="stat">{stats? stats[0]["avg_answer"] : "undefined"} / 5</p>
+                    <p className="stat">{stats? stats[0]["avg_answer"].toFixed(1) : "undefined"} / 5</p>
                     <p className="text">Délai de livraison</p>
                 </div>
                 <div className="package-state">
-                    <p className="stat">{stats? stats[1]["avg_answer"] : "undefined"} / 5</p>
+                    <p className="stat">{stats? stats[1]["avg_answer"].toFixed(1) : "undefined"} / 5</p>
                     <p className="text">Etat du colis</p>
                 </div>
                 <div className="deliverer-behavior">
-                    <p className="stat">{stats? stats[2]["avg_answer"] : "undefined"} / 5</p>
+                    <p className="stat">{stats? stats[2]["avg_answer"].toFixed(1) : "undefined"} / 5</p>
                     <p className="text">Comportement du livreur</p>
                 </div>
             </div>
