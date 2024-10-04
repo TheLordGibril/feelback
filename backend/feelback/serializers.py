@@ -3,9 +3,12 @@ from rest_framework import serializers
 from .models import Customer, Deliverer, Package, Delivery, Form, Question, FormQuestion
 from .models import FormQuestion, Form, Question
 
+# Serializers pour convertir des objets Python complexes
+# en types de données simples comme des JSON, et inversement.
 
-class CustomerSerializer(serializers.ModelSerializer):
-    class Meta:
+
+class CustomerSerializer(serializers.ModelSerializer): #CustomerSerializer Sérialise le modèle Customer
+    class Meta: #Meta : Définit le modèle associé et les champs à inclure.
         model = Customer
         fields = '__all__'
 
@@ -21,7 +24,10 @@ class PackageSerializer(serializers.ModelSerializer):
         model = Package
         fields = '__all__'
 
+# Explication d'un Serializer avec relation
 
+# PackageSerializer, CustomerSerializer, DelivererSerializer
+# sont imbriqués à l'intérieur du DeliverySerializer pour permettre la sérialisation de ces relations.
 class DeliverySerializer(serializers.ModelSerializer):
     package = PackageSerializer()
     customer = CustomerSerializer()
@@ -58,11 +64,10 @@ class FormQuestionCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = FormQuestion
         fields = ['form', 'question', 'answer', 'customer']
-
+        
+    # Validate permet de vérifié ldes données soumises avant traitement
     def validate(self, data):
-        # Récupérer le formulaire spécifique
         form = data.get('form')
-        customer = data.get('customer')
 
         if not form:
             raise serializers.ValidationError("Le formulaire est obligatoire.")
@@ -93,4 +98,3 @@ class FormQuestionCreateSerializer(serializers.ModelSerializer):
         #     if FormQuestion.objects.filter(form=form, question_id=question_id, customer=customer).exists():
         #         raise serializers.ValidationError(f"La question '{question_id}' a déjà une réponse pour ce formulaire et client.")
         
-        return data

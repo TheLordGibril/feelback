@@ -11,6 +11,8 @@ from .utils import get_feedback_stats
 from rest_framework.response import Response
 
 
+# ListAPIView => retourne une liste de ce qu'on lui donne (ici query permet de définir les objets retourné (TOUS) 
+# CustomerSerialize serialize les objets récupéré
 class CustomerList(generics.ListAPIView):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
@@ -45,12 +47,15 @@ class FormQuestionList(generics.ListAPIView):
     queryset = FormQuestion.objects.all()
     serializer_class = FormQuestionSerializer
 
+# FormQuestionCreate crée des réponses a des questions dans un formulaire
 
 class FormQuestionCreate(APIView):
+    #args pour passer un argument
+    #kwargs (keyword args pour passer une liste d'arguments)
     def post(self, request, *args, **kwargs):
         if isinstance(request.data, list):
             serializer = FormQuestionCreateSerializer(
-                data=request.data, many=True)
+                data=request.data, many=True) #many = True permet de prendre plusieurs objet
 
             if serializer.is_valid():
                 serializer.save()
