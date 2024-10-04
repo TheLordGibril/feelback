@@ -17,7 +17,7 @@ export default function Form() {
         behavior: 3
     });
 
-    function test(name, value) {
+    function updateFormAnswer(name, value) {
         setFormState(prevState => ({
             ...prevState,
             [name]: value
@@ -66,9 +66,9 @@ export default function Form() {
             <Link to="/" id="home-button" className="link-button">revenir a la page daccueil</Link>
             <h2 id="opinion">Donner votre avis</h2>
         
-            <RadioGroup handleChange={test} text="évaluer de 1 a 5 le respect du délai de livraison" name="delay"/>
-            <RadioGroup handleChange={test} text="évaluer de 1 a 5 l'état de votre colis a sa réception" name="state"/>
-            <RadioGroup handleChange={test} text="évaluer de 1 a 5 le comportement du livreur" name="behavior"/>
+            <RadioGroup handleChange={updateFormAnswer} text="évaluer de 1 a 5 le respect du délai de livraison" name="delay"/>
+            <RadioGroup handleChange={updateFormAnswer} text="évaluer de 1 a 5 l'état de votre colis a sa réception" name="state"/>
+            <RadioGroup handleChange={updateFormAnswer} text="évaluer de 1 a 5 le comportement du livreur" name="behavior"/>
 
             <button id="send-button" className="link-button" onClick={post_result}>envoyer</button>
             <Footer/>

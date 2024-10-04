@@ -7,16 +7,16 @@
 
 #title {
     font-size: 48px;
-    font-weight: 300;
+    font-weight: 500;
     margin-bottom: -10px;
     margin-top: 0px;
     font-family: 'Poiret One';
 }
 
 #subtitle {
-    margin-top: 0px;
-    font-weight: 24px;
-    font-weight: 500;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 img {

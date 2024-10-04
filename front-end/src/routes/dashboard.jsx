@@ -22,8 +22,8 @@ export default function Dashboard() {
         <div className="container-dashboard">
             <Header/>
             <Link to="/" id="home-button" className="link-button">revenir a la page d'accueil</Link>
-            <h2>Tableau de bord</h2>
-            <p>Cette page regroupe des statistiques moyennes sur l'ensemble des réponses données</p>
+            <h2 id="dashboard-title">Tableau de bord</h2>
+            <p id="details-text">Cette page regroupe des statistiques moyennes sur l'ensemble des réponses données</p>
                 
             <div id="container-stats">
                 <div className="total-answers">
