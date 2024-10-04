@@ -4,7 +4,8 @@ from .models import FormQuestion
 
 def get_feedback_stats():
     stats = FormQuestion.objects.values('form_id', 'question_id').annotate(
-        nb_people=Count('customer_id', distinct=True), # * Distinct permet de ne pas recompter
+        # On compte la soumission d'un form et non le nombre de question de ce formulaire
+        nb_submissions=Count('created_at', distinct=True),
         avg_answer=Avg('answer')
     )
     return stats
