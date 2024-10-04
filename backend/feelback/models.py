@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from django.db.models import Avg
 
+#Max et minValue Permettent de limiter les valeurs possible entre 1 et 5
 
 class Customer(models.Model):
     first_name = models.CharField(max_length=255)
@@ -9,11 +9,12 @@ class Customer(models.Model):
     phone_number = models.CharField(max_length=20)
     email = models.EmailField()
     lane_number = models.CharField(max_length=255)
-    address = models.TextField()
+    address = models.TextField() # TODO a modifier en charfield (TextField conçu pour long paragraphe)
     zip_code = models.CharField(max_length=20)
     town = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
 
+    #  __str__ Permet de retourner une réprésentation lisible de l'objet mais non nécéssaire dans notre cas
     def __str__(self):
         return ""
 
@@ -74,7 +75,7 @@ class FormQuestion(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     answer = models.IntegerField(
         validators=[
-            MaxValueValidator(5), MinValueValidator(1)]
+            MaxValueValidator(5), MinValueValidator(1)] #Ici on a un validators qui vérifie les entrés saisies en BDD pour plus de robustesse
     )
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)

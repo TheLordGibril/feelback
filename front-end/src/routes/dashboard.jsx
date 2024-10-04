@@ -27,7 +27,7 @@ export default function Dashboard() {
                 
             <div id="container-stats">
                 <div className="total-answers">
-                    <p className="stat">{stats? stats[0]["nb_people"] : "undefined"}</p>
+                    <p className="stat">{stats ? stats[0]["nb_submissions"] : "undefined"}</p>
                     <p className="text">Réponses</p>
                 </div>
                 <div className="delivery-delay">
