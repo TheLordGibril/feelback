@@ -7,6 +7,7 @@ import Footer from "../components/footer"
 import React from "react";
 import axios from "axios";
 
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export default function Form() {
@@ -17,6 +18,18 @@ export default function Form() {
         behavior: 3
     });
 
+    const [textVisible,setTextVisibile] = React.useState(false)
+
+    const navigate = useNavigate()
+
+    function form_sent(){
+        setTextVisibile(true)
+        setTimeout(() => {
+            console.log("gfhjkgfk")
+            return navigate("/")
+        },1500)
+
+    }
     function updateFormAnswer(name, value) {
         setFormState(prevState => ({
             ...prevState,
@@ -28,6 +41,7 @@ export default function Form() {
     
 
     async function post_result() {
+        form_sent()
         try {
             const response = await axios.post('/api/create-answer/', [
                 {
@@ -71,6 +85,7 @@ export default function Form() {
             <RadioGroup handleChange={updateFormAnswer} text="évaluer de 1 a 5 le comportement du livreur" name="behavior"/>
 
             <button id="send-button" className="link-button" onClick={post_result}>envoyer</button>
+            {textVisible ? "Merci d'avoir répondu !" : ""}
             <Footer/>
             
         </div>
